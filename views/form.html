@@ -1,0 +1,25 @@
+  <form name="emailForm">
+    <ul>
+      <li>
+        <label for="lastname">Nom : </label><input type="text" name="lastname" ng-model="userLastname" ng-pattern="regexLastname" />
+      </li>
+      <div class="incorrectEntry" ng-show="emailForm.lastname.$error.pattern">{{incorrectEntry}}</div>
+      <li>
+        <label for="email">Email : </label><input type="email" name="email" ng-model="userEmail" ng-pattern="regexEmail" />
+      </li>
+      <div class="incorrectEntry" ng-show="emailForm.email.$error.pattern">{{incorrectEntry}}</div>
+      <li>
+        <label for="subject">Sujet : </label><input type="text" name="subject" ng-model="userSubject" ng-pattern="regexSubject" />
+      </li>
+      <div class="incorrectEntry" ng-show="emailForm.subject.$error.pattern">{{incorrectEntry}}</div>
+      <li>
+        <label for="text">Texte : </label><textarea name="text" ng-model="userText"></textarea>
+      </li>
+      <li>
+        <button type="button" name="button" ng-click="showSubject()">Envoyer</button>
+      </li>
+    </ul>
+  </form>
+<ul>
+  <li ng-repeat="subject in subjects track by $index"><a ng-href="#!/mailcontent/{{$index}}">{{subject}}</a></li>
+</ul>

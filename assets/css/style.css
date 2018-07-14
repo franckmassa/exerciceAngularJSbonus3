@@ -1,0 +1,11 @@
+li{
+  list-style: none;
+}
+.incorrectEntry{
+  color: red;
+  font-weight: bold;
+}
+#subject{
+  color: #1A8FE3;
+  font-weight: bold;
+}
